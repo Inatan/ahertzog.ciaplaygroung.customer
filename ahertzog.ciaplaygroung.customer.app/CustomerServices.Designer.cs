@@ -29,20 +29,20 @@ namespace ahertzog.ciaplaygroung.customer.app
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxPath = new System.Windows.Forms.TextBox();
             this.buttonGerar = new System.Windows.Forms.Button();
             this.buttonProcurar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonFechar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // textBoxPath
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(81, 37);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(433, 20);
-            this.textBox1.TabIndex = 0;
+            this.textBoxPath.Enabled = false;
+            this.textBoxPath.Location = new System.Drawing.Point(81, 37);
+            this.textBoxPath.Name = "textBoxPath";
+            this.textBoxPath.Size = new System.Drawing.Size(433, 20);
+            this.textBoxPath.TabIndex = 0;
             // 
             // buttonGerar
             // 
@@ -88,11 +88,12 @@ namespace ahertzog.ciaplaygroung.customer.app
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(615, 110);
+            this.ControlBox = false;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonProcurar);
             this.Controls.Add(this.buttonFechar);
             this.Controls.Add(this.buttonGerar);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxPath);
             this.Name = "CustomerServices";
             this.Text = "Conversor de Clientes";
             this.Load += new System.EventHandler(this.FormCustomer_Load);
@@ -103,7 +104,7 @@ namespace ahertzog.ciaplaygroung.customer.app
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxPath;
         private System.Windows.Forms.Button buttonGerar;
         private System.Windows.Forms.Button buttonProcurar;
         private System.Windows.Forms.Label label1;
