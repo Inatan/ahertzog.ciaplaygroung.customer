@@ -1,7 +1,7 @@
 ﻿
 namespace ahertzog.ciaplaygroung.customer.app
 {
-    partial class CustomerServices
+    partial class CustomerServicesForm
     {
         /// <summary>
         /// Variável de designer necessária.

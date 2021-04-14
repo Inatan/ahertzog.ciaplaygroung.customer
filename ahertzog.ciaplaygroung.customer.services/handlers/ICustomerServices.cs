@@ -1,9 +1,11 @@
-﻿namespace ahertzog.ciaplaygroung.customer.services.handlers
-{
-    interface ICustomerServices
-    {
-        Customer ReadFile();
+﻿using ahertzog.ciaplaygroung.customer.domain.model;
 
-        void WriteCustumersFile(Customer customer);
+namespace ahertzog.ciaplaygroung.customer.services.handlers
+{
+    public interface ICustomerServices
+    {
+        Customer ReadFile(string filePath);
+
+        void WriteCustomersFile(CustomerServices customer);
     }
 }

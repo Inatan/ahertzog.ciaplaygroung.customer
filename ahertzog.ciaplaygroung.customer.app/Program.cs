@@ -16,7 +16,7 @@ namespace ahertzog.ciaplaygroung.customer.app
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CustomerServices());
+            Application.Run(new CustomerServicesForm());
         }
     }
 }

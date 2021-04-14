@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="ExcelDataReader" Version="3.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ahertzog.ciaplaygroung.customer.domain\ahertzog.ciaplaygroung.customer.domain.csproj" />
   </ItemGroup>
 

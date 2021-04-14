@@ -1,11 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace ahertzog.ciaplaygroung.customer.domain.model
 {
-    class Customer
+    public class Customer
     {
+        public Customer()
+        {
+            Emails = new List<string>();
+        }
+
         public string CompanyName { get; set; }
         public string FantasyName { get; set; }
         public string Address { get; set; }
@@ -17,6 +20,7 @@ namespace ahertzog.ciaplaygroung.customer.domain.model
         public string IE { get; set; }
         public string Phone { get; set; }
         public string CellularNumber { get; set; }
+        public string Contact { get; set; }
         public IList<string> Emails { get; set; }
 
     }
