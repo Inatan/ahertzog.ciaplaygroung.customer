@@ -1,2 +1,2 @@
 # ahertzog.ciaplaygroung.customer
-Windows forms app that treat data from excel font files
+Windows forms app that treat data from excel source files
