@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // conjunto de atributos. Altere estes valores de atributo para modificar as informações
 // associadas a um assembly.
 [assembly: AssemblyTitle("ahertzog.ciaplaygroung.customer.app")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("CiaPlayground Converter customer software")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Ahertzog")]
 [assembly: AssemblyProduct("ahertzog.ciaplaygroung.customer.app")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]

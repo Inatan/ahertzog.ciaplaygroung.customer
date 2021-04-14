@@ -17,7 +17,7 @@ namespace ahertzog.ciaplaygroung.customer.services.handlers
                 {
                     while (reader.Read())
                     {
-                        if(reader.GetString(0) != null && reader.GetFieldType(1) == typeof(string))
+                        if(reader.GetFieldType(0) == typeof(string) && reader.GetString(0) != null && reader.GetFieldType(1) == typeof(string))
                         {
                             string key = reader.GetString(0).Trim();
                             string value = reader.GetString(1);
@@ -67,7 +67,7 @@ namespace ahertzog.ciaplaygroung.customer.services.handlers
                                     break;
                             }
                         }
-                        else if(reader.GetString(0) == null && reader.GetFieldType(1) == typeof(string) && reader.GetString(1) != null)
+                        else if(reader.GetFieldType(0) == typeof(string) && reader.GetString(0) == null && reader.GetFieldType(1) == typeof(string) && reader.GetString(1) != null)
                         {
                             string value = reader.GetString(1);
                             if(value.Contains("@"))
