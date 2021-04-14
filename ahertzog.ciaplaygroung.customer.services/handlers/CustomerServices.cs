@@ -16,7 +16,7 @@ namespace ahertzog.ciaplaygroung.customer.services.handlers
                 {
                     while (reader.Read())
                     {
-                        if(reader.GetString(0) != null)
+                        if(reader.GetString(0) != null && reader.GetFieldType(1) == typeof(string))
                         {
                             string key = reader.GetString(0).Trim();
                             string value = reader.GetString(1);
@@ -65,6 +65,12 @@ namespace ahertzog.ciaplaygroung.customer.services.handlers
                                 default:
                                     break;
                             }
+                        }
+                        else if(reader.GetString(0) == null && reader.GetString(1) != null)
+                        {
+                            string value = reader.GetString(1);
+                            if(value.Contains("@"))
+                                customer.Emails.Add(value);
                         }
                     }
                 }

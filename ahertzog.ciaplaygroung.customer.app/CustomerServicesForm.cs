@@ -16,15 +16,15 @@ namespace ahertzog.ciaplaygroung.customer.app
 
         private void FormCustomer_Load(object sender, EventArgs e)
         {
-            buttonGerar.Enabled = false;
+            ButtonGenerate.Enabled = false;
         }
 
-        private void ButtonFechar_Click(object sender, EventArgs e)
+        private void ButtonClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void ButtonGerar_Click(object sender, EventArgs e)
+        private void ButtonGenerate_Click(object sender, EventArgs e)
         {
             string sourcePath = textBoxPath.Text;
             List<Customer> customers = new List<Customer>();
@@ -32,12 +32,11 @@ namespace ahertzog.ciaplaygroung.customer.app
             foreach (string sourceFile in Directory.GetFiles(sourcePath, "*.xlsx"))
             {
                 string fileName = Path.GetFileName(sourceFile);
-                customerServices.ReadFile(sourceFile);
-                //MessageBox.Show(fileName);
+                customers.Add(customerServices.ReadFile(sourceFile));
             }
         }
 
-        private void ButtonProcurar_Click(object sender, EventArgs e)
+        private void ButtonSearch_Click(object sender, EventArgs e)
         {
             using (var fbd = new FolderBrowserDialog())
             {
@@ -47,7 +46,7 @@ namespace ahertzog.ciaplaygroung.customer.app
                 {
                     textBoxPath.Text = fbd.SelectedPath;
                     string[] files = Directory.GetFiles(fbd.SelectedPath);
-                    buttonGerar.Enabled = true;
+                    ButtonGenerate.Enabled = true;
                 }
             }
         }

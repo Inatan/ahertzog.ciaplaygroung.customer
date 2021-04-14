@@ -30,10 +30,10 @@ namespace ahertzog.ciaplaygroung.customer.app
         private void InitializeComponent()
         {
             this.textBoxPath = new System.Windows.Forms.TextBox();
-            this.buttonGerar = new System.Windows.Forms.Button();
-            this.buttonProcurar = new System.Windows.Forms.Button();
+            this.ButtonGenerate = new System.Windows.Forms.Button();
+            this.ButtonSearch = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.buttonFechar = new System.Windows.Forms.Button();
+            this.ButtonClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBoxPath
@@ -44,25 +44,25 @@ namespace ahertzog.ciaplaygroung.customer.app
             this.textBoxPath.Size = new System.Drawing.Size(433, 20);
             this.textBoxPath.TabIndex = 0;
             // 
-            // buttonGerar
+            // ButtonGenerate
             // 
-            this.buttonGerar.Location = new System.Drawing.Point(8, 75);
-            this.buttonGerar.Name = "buttonGerar";
-            this.buttonGerar.Size = new System.Drawing.Size(149, 23);
-            this.buttonGerar.TabIndex = 1;
-            this.buttonGerar.Text = "Gerar Excel de Clientes";
-            this.buttonGerar.UseVisualStyleBackColor = true;
-            this.buttonGerar.Click += new System.EventHandler(this.ButtonGerar_Click);
+            this.ButtonGenerate.Location = new System.Drawing.Point(8, 75);
+            this.ButtonGenerate.Name = "ButtonGenerate";
+            this.ButtonGenerate.Size = new System.Drawing.Size(149, 23);
+            this.ButtonGenerate.TabIndex = 1;
+            this.ButtonGenerate.Text = "Gerar Excel de Clientes";
+            this.ButtonGenerate.UseVisualStyleBackColor = true;
+            this.ButtonGenerate.Click += new System.EventHandler(this.ButtonGenerate_Click);
             // 
-            // buttonProcurar
+            // ButtonSearch
             // 
-            this.buttonProcurar.Location = new System.Drawing.Point(520, 35);
-            this.buttonProcurar.Name = "buttonProcurar";
-            this.buttonProcurar.Size = new System.Drawing.Size(75, 23);
-            this.buttonProcurar.TabIndex = 1;
-            this.buttonProcurar.Text = "Procurar";
-            this.buttonProcurar.UseVisualStyleBackColor = true;
-            this.buttonProcurar.Click += new System.EventHandler(this.ButtonProcurar_Click);
+            this.ButtonSearch.Location = new System.Drawing.Point(520, 35);
+            this.ButtonSearch.Name = "ButtonSearch";
+            this.ButtonSearch.Size = new System.Drawing.Size(75, 23);
+            this.ButtonSearch.TabIndex = 1;
+            this.ButtonSearch.Text = "Procurar";
+            this.ButtonSearch.UseVisualStyleBackColor = true;
+            this.ButtonSearch.Click += new System.EventHandler(this.ButtonSearch_Click);
             // 
             // label1
             // 
@@ -73,28 +73,28 @@ namespace ahertzog.ciaplaygroung.customer.app
             this.label1.TabIndex = 2;
             this.label1.Text = "Pasta Origem";
             // 
-            // buttonFechar
+            // ButtonClose
             // 
-            this.buttonFechar.Location = new System.Drawing.Point(520, 75);
-            this.buttonFechar.Name = "buttonFechar";
-            this.buttonFechar.Size = new System.Drawing.Size(75, 23);
-            this.buttonFechar.TabIndex = 1;
-            this.buttonFechar.Text = "Fechar";
-            this.buttonFechar.UseVisualStyleBackColor = true;
-            this.buttonFechar.Click += new System.EventHandler(this.ButtonFechar_Click);
+            this.ButtonClose.Location = new System.Drawing.Point(520, 75);
+            this.ButtonClose.Name = "ButtonClose";
+            this.ButtonClose.Size = new System.Drawing.Size(75, 23);
+            this.ButtonClose.TabIndex = 1;
+            this.ButtonClose.Text = "Fechar";
+            this.ButtonClose.UseVisualStyleBackColor = true;
+            this.ButtonClose.Click += new System.EventHandler(this.ButtonClose_Click);
             // 
-            // CustomerServices
+            // CustomerServicesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(615, 110);
             this.ControlBox = false;
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.buttonProcurar);
-            this.Controls.Add(this.buttonFechar);
-            this.Controls.Add(this.buttonGerar);
+            this.Controls.Add(this.ButtonSearch);
+            this.Controls.Add(this.ButtonClose);
+            this.Controls.Add(this.ButtonGenerate);
             this.Controls.Add(this.textBoxPath);
-            this.Name = "CustomerServices";
+            this.Name = "CustomerServicesForm";
             this.Text = "Conversor de Clientes";
             this.Load += new System.EventHandler(this.FormCustomer_Load);
             this.ResumeLayout(false);
@@ -105,10 +105,10 @@ namespace ahertzog.ciaplaygroung.customer.app
         #endregion
 
         private System.Windows.Forms.TextBox textBoxPath;
-        private System.Windows.Forms.Button buttonGerar;
-        private System.Windows.Forms.Button buttonProcurar;
+        private System.Windows.Forms.Button ButtonGenerate;
+        private System.Windows.Forms.Button ButtonSearch;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button buttonFechar;
+        private System.Windows.Forms.Button ButtonClose;
     }
 }
 
