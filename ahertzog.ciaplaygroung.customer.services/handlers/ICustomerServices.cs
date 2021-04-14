@@ -1,4 +1,5 @@
 ﻿using ahertzog.ciaplaygroung.customer.domain.model;
+using System.Collections.Generic;
 
 namespace ahertzog.ciaplaygroung.customer.services.handlers
 {
@@ -6,6 +7,6 @@ namespace ahertzog.ciaplaygroung.customer.services.handlers
     {
         Customer ReadFile(string filePath);
 
-        void WriteCustomersFile(CustomerServices customer);
+        void WriteCustomersFile(IList<Customer> customers,string newFilePath);
     }
 }
