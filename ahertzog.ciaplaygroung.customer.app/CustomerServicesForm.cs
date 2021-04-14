@@ -15,6 +15,8 @@ namespace ahertzog.ciaplaygroung.customer.app
         {
             InitializeComponent();
             customerServices = new CustomerServices();
+            LabelProgress.Visible = false;
+            ProgressBarCustomers.Visible = false;
         }
 
         private void FormCustomer_Load(object sender, EventArgs e)
@@ -41,27 +43,46 @@ namespace ahertzog.ciaplaygroung.customer.app
                 saveFilexlsxDialog.FileName = sourcePath.Split('/').Last()+"-Clientes";
                 if (saveFilexlsxDialog.ShowDialog() == DialogResult.OK)
                 {
-                    foreach (string sourceFile in Directory.GetFiles(sourcePath, "*.xls"))
+                    var files = Directory.GetFiles(sourcePath, "*.xls");
+                    if (files.Length > 0)
                     {
-                        customers.Add(customerServices.ReadFile(sourceFile));
-                    }
-                    try
-                    {
-                        customerServices.WriteCustomersFile(customers, saveFilexlsxDialog.FileName);
-                        MessageBox.Show($"Arquivo {saveFilexlsxDialog.FileName} criado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("Erro ao criar planilha com os cliente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                
-                }
+                        LabelProgress.Text = $"Lendo arquivos de {sourcePath}...";
+                        LabelProgress.Visible = true;
+                        ProgressBarCustomers.Visible = true;
+                        ProgressBarCustomers.Minimum = 0;
+                        ProgressBarCustomers.Maximum = files.Length;
+                        ProgressBarCustomers.Step = 1;
+                        try
+                        {
+                            foreach (string sourceFile in files)
+                            {
+                                ProgressBarCustomers.PerformStep();
+                                customers.Add(customerServices.ReadFile(sourceFile));
+                            }
 
+                            LabelProgress.Text = $"Gerando arquivo {saveFilexlsxDialog.FileName}...";
+                            customerServices.WriteCustomersFile(customers, saveFilexlsxDialog.FileName);
+                            LabelProgress.Text = $"Finalizado";
+
+                            MessageBox.Show($"Arquivo {saveFilexlsxDialog.FileName} criado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show("Erro ao criar planilha com os cliente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show($"O caminho selecionado {sourcePath}, não apresenta nenhum arquivo excel. Favor selecionar outro caminho.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
             }
         }
 
         private void ButtonSearch_Click(object sender, EventArgs e)
         {
+            LabelProgress.Visible = false;
+            ProgressBarCustomers.Visible = false;
             using (var fbd = new FolderBrowserDialog())
             {
                 DialogResult result = fbd.ShowDialog();

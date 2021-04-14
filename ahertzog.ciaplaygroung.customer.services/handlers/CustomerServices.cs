@@ -1,7 +1,6 @@
 ﻿using ahertzog.ciaplaygroung.customer.domain.model;
 using ExcelDataReader;
 using Microsoft.Office.Interop.Excel;
-using System;
 using System.Collections.Generic;
 using System.IO;
 
@@ -68,7 +67,7 @@ namespace ahertzog.ciaplaygroung.customer.services.handlers
                                     break;
                             }
                         }
-                        else if(reader.GetString(0) == null && reader.GetString(1) != null)
+                        else if(reader.GetString(0) == null && reader.GetFieldType(1) == typeof(string) && reader.GetString(1) != null)
                         {
                             string value = reader.GetString(1);
                             if(value.Contains("@"))

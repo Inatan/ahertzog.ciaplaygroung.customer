@@ -34,19 +34,21 @@ namespace ahertzog.ciaplaygroung.customer.app
             this.ButtonSearch = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.ButtonClose = new System.Windows.Forms.Button();
+            this.ProgressBarCustomers = new System.Windows.Forms.ProgressBar();
+            this.LabelProgress = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBoxPath
             // 
             this.textBoxPath.Enabled = false;
-            this.textBoxPath.Location = new System.Drawing.Point(81, 37);
+            this.textBoxPath.Location = new System.Drawing.Point(81, 53);
             this.textBoxPath.Name = "textBoxPath";
             this.textBoxPath.Size = new System.Drawing.Size(433, 20);
             this.textBoxPath.TabIndex = 0;
             // 
             // ButtonGenerate
             // 
-            this.ButtonGenerate.Location = new System.Drawing.Point(8, 75);
+            this.ButtonGenerate.Location = new System.Drawing.Point(8, 90);
             this.ButtonGenerate.Name = "ButtonGenerate";
             this.ButtonGenerate.Size = new System.Drawing.Size(149, 23);
             this.ButtonGenerate.TabIndex = 1;
@@ -56,7 +58,7 @@ namespace ahertzog.ciaplaygroung.customer.app
             // 
             // ButtonSearch
             // 
-            this.ButtonSearch.Location = new System.Drawing.Point(520, 35);
+            this.ButtonSearch.Location = new System.Drawing.Point(528, 50);
             this.ButtonSearch.Name = "ButtonSearch";
             this.ButtonSearch.Size = new System.Drawing.Size(75, 23);
             this.ButtonSearch.TabIndex = 1;
@@ -67,7 +69,7 @@ namespace ahertzog.ciaplaygroung.customer.app
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(5, 40);
+            this.label1.Location = new System.Drawing.Point(5, 56);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 13);
             this.label1.TabIndex = 2;
@@ -75,7 +77,7 @@ namespace ahertzog.ciaplaygroung.customer.app
             // 
             // ButtonClose
             // 
-            this.ButtonClose.Location = new System.Drawing.Point(520, 75);
+            this.ButtonClose.Location = new System.Drawing.Point(528, 90);
             this.ButtonClose.Name = "ButtonClose";
             this.ButtonClose.Size = new System.Drawing.Size(75, 23);
             this.ButtonClose.TabIndex = 1;
@@ -83,12 +85,30 @@ namespace ahertzog.ciaplaygroung.customer.app
             this.ButtonClose.UseVisualStyleBackColor = true;
             this.ButtonClose.Click += new System.EventHandler(this.ButtonClose_Click);
             // 
+            // ProgressBarCustomers
+            // 
+            this.ProgressBarCustomers.Location = new System.Drawing.Point(81, 24);
+            this.ProgressBarCustomers.Name = "ProgressBarCustomers";
+            this.ProgressBarCustomers.Size = new System.Drawing.Size(433, 23);
+            this.ProgressBarCustomers.TabIndex = 3;
+            // 
+            // LabelProgress
+            // 
+            this.LabelProgress.AutoSize = true;
+            this.LabelProgress.Location = new System.Drawing.Point(78, 8);
+            this.LabelProgress.Name = "LabelProgress";
+            this.LabelProgress.Size = new System.Drawing.Size(70, 13);
+            this.LabelProgress.TabIndex = 4;
+            this.LabelProgress.Text = "labelProgress";
+            // 
             // CustomerServicesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(615, 110);
+            this.ClientSize = new System.Drawing.Size(615, 125);
             this.ControlBox = false;
+            this.Controls.Add(this.LabelProgress);
+            this.Controls.Add(this.ProgressBarCustomers);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ButtonSearch);
             this.Controls.Add(this.ButtonClose);
@@ -109,6 +129,8 @@ namespace ahertzog.ciaplaygroung.customer.app
         private System.Windows.Forms.Button ButtonSearch;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button ButtonClose;
+        private System.Windows.Forms.ProgressBar ProgressBarCustomers;
+        private System.Windows.Forms.Label LabelProgress;
     }
 }
 
