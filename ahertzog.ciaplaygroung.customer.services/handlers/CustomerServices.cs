@@ -89,7 +89,7 @@ namespace ahertzog.ciaplaygroung.customer.services.handlers
 
             xlWorkBook = xlApp.Workbooks.Add(misValue);
             xlWorkSheet = (Worksheet)xlWorkBook.Worksheets.get_Item(1);
-
+            
             xlWorkSheet.Cells[1, 1] = "RAZÃO SOCIAL";
             xlWorkSheet.Cells[1, 2] = "NOME FANTASIA";
             xlWorkSheet.Cells[1, 3] = "ENDEREÇO";
@@ -104,7 +104,7 @@ namespace ahertzog.ciaplaygroung.customer.services.handlers
             xlWorkSheet.Cells[1, 12] = "E-MAIL1";
             xlWorkSheet.Cells[1, 13] = "E-MAIL2";
             xlWorkSheet.Cells[1, 14] = "E-MAIL3";
-
+            xlWorkSheet.get_Range("A1", "N1").Cells.Font.Bold = true;
             int row = 2;
             foreach (var customer in customers)
             {
@@ -126,7 +126,7 @@ namespace ahertzog.ciaplaygroung.customer.services.handlers
 
                 row++;
             }
-
+            xlWorkSheet.Columns.AutoFit();
             xlWorkBook.SaveAs(newFilePath, XlFileFormat.xlOpenXMLWorkbook, misValue, misValue, misValue, misValue, XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
             xlWorkBook.Close(true, misValue, misValue);
             xlApp.Quit();

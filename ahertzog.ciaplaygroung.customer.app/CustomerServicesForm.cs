@@ -32,29 +32,31 @@ namespace ahertzog.ciaplaygroung.customer.app
             string filter = "Excel Worksheets 2007(*.xlsx)|*.xlsx";
             string sourcePath = textBoxPath.Text;
             List<Customer> customers = new List<Customer>();
-            
-            SaveFileDialog saveFilexlsxDialog = new SaveFileDialog();
-            saveFilexlsxDialog.Filter = filter;
-            saveFilexlsxDialog.FilterIndex = 1;
-            saveFilexlsxDialog.Title = "Salvar novo arquivo Excel";
-            saveFilexlsxDialog.FileName = sourcePath.Split('/').Last()+"-Clientes";
-            if (saveFilexlsxDialog.ShowDialog() == DialogResult.OK)
+
+            using (SaveFileDialog saveFilexlsxDialog = new SaveFileDialog())
             {
-                foreach (string sourceFile in Directory.GetFiles(sourcePath, "*.xls"))
+                saveFilexlsxDialog.Filter = filter;
+                saveFilexlsxDialog.FilterIndex = 1;
+                saveFilexlsxDialog.Title = "Salvar novo arquivo Excel";
+                saveFilexlsxDialog.FileName = sourcePath.Split('/').Last()+"-Clientes";
+                if (saveFilexlsxDialog.ShowDialog() == DialogResult.OK)
                 {
-                    string fileName = Path.GetFileName(sourceFile);
-                    customers.Add(customerServices.ReadFile(sourceFile));
-                }
-                try
-                {
-                    customerServices.WriteCustomersFile(customers, saveFilexlsxDialog.FileName);
-                    MessageBox.Show($"Arquivo {saveFilexlsxDialog.FileName} criado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Erro ao criar planilha com os cliente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                    foreach (string sourceFile in Directory.GetFiles(sourcePath, "*.xls"))
+                    {
+                        customers.Add(customerServices.ReadFile(sourceFile));
+                    }
+                    try
+                    {
+                        customerServices.WriteCustomersFile(customers, saveFilexlsxDialog.FileName);
+                        MessageBox.Show($"Arquivo {saveFilexlsxDialog.FileName} criado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Erro ao criar planilha com os cliente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 
+                }
+
             }
         }
 
